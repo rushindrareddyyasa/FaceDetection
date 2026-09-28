@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Dataset - not required for deployment
+data/
+data_yolo/
+
+# Runtime uploaded images/results
+static/uploads/*
+static/results/*
+
+# Environment variables
+.env
+.env.*
+
+# IDE files
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
