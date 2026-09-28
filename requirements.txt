@@ -1,6 +1,8 @@
-ultralytics
-opencv-python
-Pillow
-matplotlib
 flask
 gunicorn
+ultralytics
+opencv-python-headless
+pillow
+numpy
+torch==2.6.0
+torchvision==0.21.0
