@@ -3,13 +3,7 @@
 __pycache__/
 *.pyc
 
-# Dataset - not required for deployment
-data/
-data_yolo/
 
-# Runtime uploaded images/results
-static/uploads/*
-static/results/*
 
 # Environment variables
 .env

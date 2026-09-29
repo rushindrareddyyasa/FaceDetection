@@ -1,0 +1,25 @@
+<annotation>
+	<folder>my-project-name</folder>
+	<filename>2212-Academic-Secondary-14-e1678333538803-640x640.jpg</filename>
+	<path>/my-project-name/2212-Academic-Secondary-14-e1678333538803-640x640.jpg</path>
+	<source>
+		<database>Unspecified</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>human</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>110</xmin>
+			<ymin>100</ymin>
+			<xmax>295</xmax>
+			<ymax>343</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,25 @@
+<annotation>
+	<folder>my-project-name</folder>
+	<filename>Lennox+-+Legend+In+My+Living+Room+-+Venue+Feature+Image+-+640x640.jpg</filename>
+	<path>/my-project-name/Lennox+-+Legend+In+My+Living+Room+-+Venue+Feature+Image+-+640x640.jpg</path>
+	<source>
+		<database>Unspecified</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>human</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>188</xmin>
+			<ymin>114</ymin>
+			<xmax>442</xmax>
+			<ymax>441</ymax>
+		</bndbox>
+	</object>
+</annotation>

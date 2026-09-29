@@ -15,9 +15,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(RESULT_FOLDER, exist_ok=True)
 
 
-# ---------------------------------------------------------
 # Load ONNX model
-# ---------------------------------------------------------
 
 MODEL_PATH = "outputs/face_detection/weights/best.onnx"
 
@@ -29,9 +27,7 @@ session = ort.InferenceSession(
 input_name = session.get_inputs()[0].name
 
 
-# ---------------------------------------------------------
-# Letterbox image
-# ---------------------------------------------------------
+# Letterbox image-
 
 def letterbox(image, new_size=640):
 
@@ -67,10 +63,7 @@ def letterbox(image, new_size=640):
     return canvas, scale, pad_x, pad_y
 
 
-# ---------------------------------------------------------
 # IoU
-# ---------------------------------------------------------
-
 def calculate_iou(box1, box2):
 
     x1 = max(box1[0], box2[0])
@@ -105,9 +98,7 @@ def calculate_iou(box1, box2):
     return intersection / union
 
 
-# ---------------------------------------------------------
 # Non-Maximum Suppression
-# ---------------------------------------------------------
 
 def nms(boxes, scores, iou_threshold=0.45):
 
@@ -141,9 +132,7 @@ def nms(boxes, scores, iou_threshold=0.45):
     return keep
 
 
-# ---------------------------------------------------------
 # Detect faces
-# ---------------------------------------------------------
 
 def detect_faces(image):
 
@@ -258,9 +247,7 @@ def detect_faces(image):
     return detections
 
 
-# ---------------------------------------------------------
 # Flask route
-# ---------------------------------------------------------
 
 @app.route("/", methods=["GET", "POST"])
 def home():

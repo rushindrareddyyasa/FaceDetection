@@ -1,0 +1,25 @@
+<annotation>
+	<folder>my-project-name</folder>
+	<filename>Nick-Allan-640x640.jpg</filename>
+	<path>/my-project-name/Nick-Allan-640x640.jpg</path>
+	<source>
+		<database>Unspecified</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<object>
+		<name>human</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>154</xmin>
+			<ymin>88</ymin>
+			<xmax>490</xmax>
+			<ymax>463</ymax>
+		</bndbox>
+	</object>
+</annotation>

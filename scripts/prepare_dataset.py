@@ -4,9 +4,7 @@ import random
 import xml.etree.ElementTree as ET
 
 
-# ============================================================
-# 1. PATHS
-# ============================================================
+# PATHS
 
 # Original training images
 TRAIN_IMAGE_DIR = "data/images/train"
@@ -30,9 +28,7 @@ YOLO_VAL_LABEL_DIR = "data_yolo/labels/val"
 YOLO_TEST_LABEL_DIR = "data_yolo/labels/test"
 
 
-# ============================================================
-# 2. CREATE DIRECTORIES
-# ============================================================
+# CREATE DIRECTORIES
 
 directories = [
     YOLO_TRAIN_IMAGE_DIR,
@@ -47,13 +43,11 @@ for directory in directories:
     os.makedirs(directory, exist_ok=True)
 
 
-# ============================================================
-# 3. XML → YOLO CONVERSION FUNCTION
-# ============================================================
+# XML → YOLO CONVERSION FUNCTION
 
 def convert_xml_to_yolo(xml_path):
     """
-    Read one Pascal VOC XML file
+    Read XML file
     and convert all bounding boxes to YOLO format.
     """
 
@@ -114,10 +108,7 @@ def convert_xml_to_yolo(xml_path):
     return yolo_annotations
 
 
-# ============================================================
-# 4. GET TRAINING IMAGES
-# ============================================================
-
+# GET TRAINING IMAGES
 all_images = []
 
 for filename in os.listdir(TRAIN_IMAGE_DIR):
@@ -148,9 +139,7 @@ print()
 print("Total annotated training images:", len(all_images))
 
 
-# ============================================================
-# 5. SHUFFLE DATA
-# ============================================================
+# SHUFFLE DATA
 
 # Fixed seed means we get the same split every time.
 random.seed(42)
@@ -158,9 +147,7 @@ random.seed(42)
 random.shuffle(all_images)
 
 
-# ============================================================
-# 6. TRAIN / VALIDATION SPLIT
-# ============================================================
+# TRAIN / VALIDATION SPLIT
 
 split_index = int(len(all_images) * 0.8)
 
@@ -172,10 +159,7 @@ print("Training images:", len(train_images))
 print("Validation images:", len(val_images))
 
 
-# ============================================================
-# 7. COPY TRAINING / VALIDATION DATA
-# ============================================================
-
+# COPY TRAINING / VALIDATION DATA
 def prepare_split(image_list, image_output_dir, label_output_dir):
 
     for image_filename in image_list:
@@ -238,9 +222,7 @@ prepare_split(
 )
 
 
-# ============================================================
-# 8. PREPARE TEST DATA
-# ============================================================
+# PREPARE TEST DATA
 
 test_images = []
 
