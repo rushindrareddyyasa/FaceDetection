@@ -8,7 +8,7 @@ import uuid
 app = Flask(__name__)
 
 # Load trained YOLO model
-model = YOLO("outputs/face_detection/weights/best.pt")
+model = YOLO("outputs/face_detection/weights/best.onnx")
 
 
 # Folders
@@ -69,8 +69,27 @@ def home():
                 message=message
             )
 
+        # Resize very large images to reduce memory usage
+        height, width = image.shape[:2]
+
+        max_size = 640
+
+        if max(height, width) > max_size:
+            scale = max_size / max(height, width)
+
+            new_width = int(width * scale)
+            new_height = int(height * scale)
+
+            image = cv2.resize(image, (new_width, new_height))
+
         # Run YOLO
-        results = model(image)
+        results = model.predict(
+            source=image,
+            imgsz=640,
+            conf=0.25,
+            device="cpu",
+            verbose=False
+        )
 
         face_count = 0
 
